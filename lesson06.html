@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<input type="text" value="demoemail@gmail.com" id="txtEmail" onkeydown="changeEmail();" />
+
+<p id="demo">lesson 06</p>
+<p id="c0221h2">Xin chao</p>
+<input type="text" name="txtFullname" value="Trinh Minh Thao" />
+<input type="text" name="txtFullname" value="Nguyen Duy Son" />
+<button onclick="myFunction()">Try it</button>
+
+<br />
+<button onclick="c0220Function()">Hello C</button>
+
+<br />
+<button onclick="changeName()">Change name</button>
+
+<script>
+	function changeEmail() {
+		// body...
+		console.log('go-here');
+	}
+
+	function changeName() {
+		document.getElementsByName('txtFullname').value = "ThaoTM";
+	}
+
+	var b = a * 10;
+	console.log(b);
+	let a;
+	a = 10;
+	
+	function myFunction() {
+	  document.getElementById("demo").innerHTML = "Hello World";
+	}
+
+	function c0220Function() {
+		document.getElementById("c0221h2").innerHTML = "Xin chao C2021H1";
+	}
+</script>
+</body>
+</html>

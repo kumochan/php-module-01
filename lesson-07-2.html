@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Lesson-05: Form, Table</title>
+</head>
+	
+<body>
+   <label for="amount">Amount</label>
+	<input type="number" id="amount">
+
+	<br />
+	<label for="from_currency">From currency</label>
+	<select id="from_currency">
+		<option value="23000">VNĐ</option>
+		<option value="1">USD</option>
+		<option value="0.8">EUR</option>
+	</select>
+
+	<br />
+	<label for="to_currency">To currency</label>
+	<select id="to_currency">
+		<option value="1">USD</option>
+		<option value="23000">VNĐ</option>
+		<option value="0.8">EUR</option>
+	</select>
+
+	 <h4 id="result"></h4>
+	 <button onclick="change()">Change</button>
+
+	 <script type="text/javascript">
+	 	function change() {
+	 		var money = document.getElementById('amount').value;
+	 		var from_currency = document.getElementById('from_currency').value;
+	 		var to_currency = document.getElementById('to_currency').value;
+	 		
+	 		var currency = document.getElementById('to_currency');
+	 		var currency_text = currency.options[currency.selectedIndex].text;
+	 		
+	 		var result = money*to_currency/from_currency;
+	 		document.getElementById('result').innerHTML = result + " " + currency_text;
+	 	}
+	 	
+	 </script>
+   
+</body>
+</html>

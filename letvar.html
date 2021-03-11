@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script>
+function run() {
+  var foo = "Foo";
+  let bar = "Bar";
+
+  console.log(foo, bar); // Foo Bar
+
+  {
+    var moo = "Mooo"
+    let baz = "Bazz";
+    console.log(moo, baz); // Mooo Bazz
+  }
+
+  console.log(moo); // Mooo
+  console.log(baz); // ReferenceError
+}
+
+run();
+// https://stackoverflow.com/a/11444416/4506775
+
+function getTime() {
+  // body...
+  var time = document.getElementById('timeSelect').value;
+  alert(time);
+}
+
+function changeTime() {
+  var time = document.getElementById('timeSelect').value;
+  document.getElementById('c0221h2').innerHTML = "Lop C0221H2 hoc gio " + time;
+
+  if (time == 'H' || time == "G") {
+    document.getElementById('divGray').style="display:none";
+  } else {
+    document.getElementById('divGray').style="display:inline-block;background-color:gray;width:200px;height:200px;";
+  }
+}
+</script>
+</head>
+<body>
+<select name='time' id='timeSelect' onchange="changeTime();">
+  <option value="G">Gio g</option>
+  <option value="H">Gio h</option>
+  <option value="I">Gio i</option>
+  <option value="K">Gio k</option>
+</select>
+<p id="c0221h2">Lop C0221H2 hoc gio H</p>
+<div id="divGray" style="background-color: gray; width: 200px; height: 200px">
+  This 200px div
+</div>
+<button onclick="getTime();">Get Time</button>
+</body>
+</html>

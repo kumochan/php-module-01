@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Lesson-05: Form, Table</title>
+</head>
+	
+<body>
+   <label for="toan">Toan</label>
+	<input type="number" id="toan">
+	<label for="ly">Lý</label>
+	<input type="number" name="" id="ly">
+	<label for="hoa">Hoá</label>
+	<input type="number" id="hoa" name="">
+	 <button type="button" onclick="sum()">Tổng</button>
+	 <button type="button" onclick="avg()">Trung bình</button>
+
+	 <h4 id="result"></h4>
+
+	 <script type="text/javascript">
+	 	function sum() {
+	 		var a = parseFloat( document.getElementById('toan').value);
+	 		var b = parseFloat(document.getElementById('ly').value);
+	 		var c = parseFloat (document.getElementById('hoa').value);
+
+	 		var sum = a + b + c;
+	 	
+	 		document.getElementById('result').innerHTML = 'Tổng là: ' + sum;
+	 	}
+	 </script>
+</body>
+</html>

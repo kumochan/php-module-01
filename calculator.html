@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <input name="hienthi" id="dis">
+        <tr>
+            <td><button  name="button" id="1" onclick="displayInput(this.id)" value="1">1</button> </td>
+            <td><button name="button" id="2" onclick="displayInput(this.id)" value="2">2</button></td>
+            <td><button name="button" id="3" onclick="displayInput(this.id)" value="3">3</button></td>
+            <td><button  name="button" id="+" onclick="cal(this.id)" value="+">+</button></td>
+        </tr>
+        <tr>
+            <td><button name="button">4</td>
+            <td><button name="button">5</td>
+            <td><button name="button">6</td>
+            <td><button name="button" name="button" id="-" onclick="cal(this.id)">-</button></td>
+        </tr>
+        <tr>
+            <td><button name="button">7</td>
+            <td><button name="button">8</td>
+            <td><button name="button">9</td>
+            <td><button name="button">x</td>
+        </tr>
+        <tr>
+            <td><button name="button">1</td>
+            <td><button name="button">1</td>
+            <td><button></button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+<script type="text/javascript">
+
+  function removeLastCharactor()
+  {
+    //const text = 'abcdef'
+    
+  }
+
+    function enable()
+    {
+        document.getElementById("+").disabled = false;      
+        document.getElementById("-").disabled = false;      
+        //document.getElementById("3").disabled = false;      
+        //document.getElementById("4").disabled = false;      
+    }
+
+    function disable(id)
+    {
+        enable();
+        document.getElementById(id).disabled = true;  
+    }
+
+    // Hàm tính toán
+    function cal(value){
+        // Việc 1: Cộng chuỗi để hiển thị ra ô input
+        append(value);
+
+        // Việc 2: Khoá nút vừa click vào
+        disable(value);
+
+        let displayAll =  document.getElementById("dis").value;
+        const editedText = displayAll.slice(1, -1) //'abcde'
+        console.log(editedText);
+    }
+
+    function displayInput(value)
+    {
+        append(value);
+    }
+
+    function append(value) {
+        let displayAll =  document.getElementById("dis").value;
+        document.getElementById("dis").value = displayAll +"" +value;
+    }
+
+</script>
+</body>
+</html>
