@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p id="demo"></p>
+
+<script>
+var cars = ["Saab", "Volvo", "BMW","Vin" ,"Merc"];
+var thaoc = ['age': '30', 'name': 'thaoc', 'address': 'HN'];
+
+
+for (const [key, value] of Object.entries(thaoc)) {
+  console.log(key, value);
+}
+
+var text = "";
+for(var i = 0; i < cars.length; i++){
+	console.log(cars[i]);
+	text += cars[i];
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>
+
+

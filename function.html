@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script language="javascript">
+        function strcon() {
+            var b = '';
+            var a = "This Is A Sample String";
+            for (i = 0; i < a.length; i++) {
+                if (a.charCodeAt(i) >= 65 && a.charCodeAt(i) <= 90) {
+                    b = b + a.charAt(i).toLowerCase();
+                }
+                else
+                    b = b + a.charAt(i).toUpperCase();
+            }
+            alert(b);
+        }
+<script>
+	
+<script>
+var str = 'cHo';
+var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+var result = [];
+  
+  for(var x=0; x<str.length; x++)
+  {
+    if(UPPER.indexOf(str[x]) !== -1)
+    {
+      result.push(str[x].toLowerCase());
+    }
+    else if(LOWER.indexOf(str[x]) !== -1)
+    {
+      result.push(str[x].toUpperCase());
+    }
+    else 
+    {
+      result.push(str[x]);
+    }
+  }
+console.log(result.join(''));
+
+</script>
+
+<p id="demo"></p>
+<script>
+
+	const array1 = ['a', 'b', 'c'];
+	for (const element of array1) {
+	  console.log(element);
+	}
+
+	var fruits = ["apple", "orange", "cherry"];
+	fruits.forEach(myFunction);
+
+	function myFunction(item, index) {
+	  document.getElementById("demo").innerHTML += index + ": " + "<br>";
+	}
+
+	// expected output: "a"
+	// expected output: "b"
+	// expected output: "c"
+</script>
+</body>
+</html>

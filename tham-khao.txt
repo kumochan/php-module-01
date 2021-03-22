@@ -1,3 +1,6 @@
 bài đọc if else 
 	https://www.programiz.com/javascript/if-else
 	https://www.tutorialspoint.com/javascript/javascript_ifelse.htm
+
+switch
+https://codepen.io/daveybrown/pen/ggRWmN

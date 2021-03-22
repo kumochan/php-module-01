@@ -1,0 +1,12 @@
+Bài tập vòng lặp
+
+Cho dãy số vô hạn: 50, 51, 53, 56, 60, ... Hãy in ra số thứ 2019.
+Bạn hãy viết chương trình tính tổng của 50 số 1, 2, 3, ..., 50.
+Bạn hãy viết chương trình tình tổng của 50 số chẵn bắt đầu từ 2.
+Bạn hãy viết chương trình tính tổng của 20 số 5, 10, 15, ..., 100.
+Bạn hãy viết chương trình tính n!
+Bạn hãy nhập vào một số N bất kỳ và kiểm tra xem N có phải số nguyên tố hay không?
+Bạn hãy nhập vào một số N bất kỳ và kiểm tra xem N có phải số hoàn hảo hay không?
+Bạn hãy viết chương trình in ra 10 số đầu tiên của dãy số Fibonacci. Hãy cho biết số thứ 13 có giá trị bao nhiêu?
+Viết chương trình tính dân số của một thành phố sau 10 năm nữa, biết rằng dân số hiện nay là 6.000.000, tỉ lệ tăng dân số hàng năm là 1.8%.
+
