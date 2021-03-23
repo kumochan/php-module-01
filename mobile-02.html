@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      
+    class Mobile {
+
+      constructor(id, name, message, from){
+        this.id = id;
+        this.name = name;
+        this.message = message;
+        this.arrMessage = [];
+        this.from = from;
+      }
+
+      setMessage(input){
+        this.message = input;
+      }
+
+      getMessage(){
+        return this.message;
+      }
+
+      setMessageFrom(input, id){
+        this.message = input;
+        this.from = id;
+      }
+
+      getMessage(){
+        return this.message;
+      }
+
+      sendMessage(message, mobile){
+        mobile.setMessage(message);
+      }
+
+      sendMessageWithId(message, mobile, from){
+        mobile.setMessageFrom(message, from);
+      }
+
+      getMessageWithId(){
+        return this.message + ': ' + this.from;
+      }
+
+    }
+
+    var iphone = new Mobile();
+    var android = new Mobile();
+    iphone.sendMessage('message from IPHONE', android);
+    var message_of_android = android.getMessage();
+    console.log(message_of_android);
+
+    var XSMAX = new Mobile();
+    var Note20 = new Mobile(4, 'VN');
+    XSMAX.sendMessage("may cui qua", Note20);
+    var mess = Note20.getMessage();
+    console.log(mess);
+
+    Note20.sendMessage('may moi do cui', iphone);
+    var iphoneMessage = iphone.getMessage();
+    iphone.arrMessage.push(iphoneMessage);
+    console.log(iphoneMessage);
+
+    Note20.sendMessageWithId('may ko noi gi nua ah', iphone, 4);
+    var iMessage = iphone.getMessage();
+    var iMessage_from = iphone.getMessageWithId();
+    console.log(iMessage_from);
+    </script>
+  </body>
+</html>

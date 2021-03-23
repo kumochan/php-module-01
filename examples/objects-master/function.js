@@ -41,5 +41,13 @@ setInterval(function() {
     start(hero_2,'doraemon');
   }, 500);
 
-// setInterval(start(hero), 500);
-//start();
+//=========
+const canvass = document.getElementById('myCanvas');
+const ctx2 = canvas.getContext('2d');
+
+const img_demo = new Image();
+img_demo.src = "img/sword0.png";
+img_demo.addEventListener('load', e => {
+  ctx2.drawImage(img_demo, 33, 71, 104, 124, 21, 20, 87, 104);
+});
+//=========

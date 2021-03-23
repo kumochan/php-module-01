@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      class Mobile {
+        constructor (id, name, message) {
+          this.id=id;
+          this.name=name;
+          this.message=message;
+        } 
+        setMessage(message) {
+          this.message=message;
+        }
+        getMessage() {
+          return this.message;
+        }
+        sendMessage(message,obj){
+          obj.setMessage(message);
+        }
+      }
+      var iphone = new Mobile(1, "iphone");
+      var android = new Mobile(2, "android");
+      iphone.sendMessage("chao may", android);
+      android.getMessage();
+      var ipmes = android.getMessage();
+      console.log(ipmes);
+    </script>
+  </body>
+</html>
