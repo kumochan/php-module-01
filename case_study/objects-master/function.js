@@ -42,12 +42,27 @@ setInterval(function() {
   }, 500);
 
 //=========
-const canvass = document.getElementById('myCanvas');
+//const canvas_xxx = document.getElementById('myCanvas');
 const ctx2 = canvas.getContext('2d');
-
 const img_demo = new Image();
 img_demo.src = "img/sword0.png";
 img_demo.addEventListener('load', e => {
   ctx2.drawImage(img_demo, 33, 71, 104, 124, 21, 20, 87, 104);
 });
 //=========
+draw();
+
+function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  var img = new Image();
+  img.onload = function() {
+    ctx.drawImage(img, 0, 0);
+    ctx.beginPath();
+    ctx.moveTo(30, 96);
+    ctx.lineTo(70, 66);
+    ctx.lineTo(103, 76);
+    ctx.lineTo(170, 15);
+    ctx.stroke();
+  };
+  img.src = 'https://mdn.mozillademos.org/files/5395/backdrop.png';
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      class Mobile {
+        constructor (id, name, message) {
+          this.id=id;
+          this.name=name;
+          this.message=message;
+          this.arrMessage
+        } 
+        setMessage(message) {
+          this.message=message;
+        }
+        getMessage() {
+          return this.message;
+        }
+        sendMessage(message,obj){
+          obj.setMessage(message);
+        }
+      }
+      var proMax = new Mobile(1, "Pro Max");
+      var iPhone_4 = new Mobile(1, "iPhone 4");
+      var samsung_21 = new Mobile(2, "S21");
+      proMax.sendMessage("chao may", samsung_21);
+      var samsung_21_message = samsung_21.getMessage();
+      console.log(samsung_21_message);
+    </script>
+  </body>
+</html>

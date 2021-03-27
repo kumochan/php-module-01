@@ -41,16 +41,30 @@ background.src = "img/Brick_04.png";
 const fire_0 = new Image();
 fire_0.src = "img/sword0.png";
 
-function drawFire() {
-    ctx.drawImage(fire_0, 0, 0, 114, 335, 100, 100, 30, 40);
+function drawFire(x,y) {
+    ctx.drawImage(fire_0, 0, 0, 114, 335, 100, x, y, 40);
 }
 
 
+
+function draw() {
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+  var img = new Image();
+  img.src = fire_0;
+  //ctx.drawImage(img, 0, 0);
+  ctx.drawImage(img, 0, 0, 114, 335, 500, 300, 250, 40);
+    // ctx.beginPath();
+    // ctx.moveTo(100, 100);
+    // ctx.lineTo(70, 66);
+    // ctx.lineTo(103, 76);
+    // ctx.lineTo(170, 15);
+    // ctx.stroke();
+  //img.src = 'https://mdn.mozillademos.org/files/5395/backdrop.png';
+};
+
+
 function moveFire(img){
-    console.log(img);
   this.moveRight = function(){
-    // img.left += 20;
-    // console.log('ok: ' + img.left);
     ctx.drawImage(fire_0, 0, 0, 114, 335, 200, 200, 30, 40);
   }
 };
@@ -67,10 +81,10 @@ function start(hero){
   // document.getElementById(id).innerHTML = hero.getHeroElement();
   
 }
-start(hero);
-// setInterval(function() {
-//     start(hero);
-//   }, 500);
+//start(hero);
+setInterval(function() {
+    //start(hero);
+  }, 500);
 
 
 //====
@@ -80,9 +94,10 @@ start(hero);
 function animate(){
     ctx.clearRect(0,0, canvas.width, canvas.height);
     ctx.drawImage(background,0,0,canvas.width,canvas.height);
-    drawSprite(playerImg, player.width * player.frameX, player.height * player.frameY, player.width, player.height,player.x ,player.y, player.width, player.height);
-drawSprite(fire__0, fire__0.width * fire__0.frameX, fire__0.height * fire__0.frameY, fire__0.width, fire__0.height,fire__0.x ,fire__0.y, fire__0.width, fire__0.height);
-    drawFire();
+    //drawSprite(playerImg, player.width * player.frameX, player.height * player.frameY, player.width, player.height,player.x ,player.y, player.width, player.height);
+//drawSprite(fire__0, fire__0.width * fire__0.frameX, fire__0.height * fire__0.frameY, fire__0.width, fire__0.height,fire__0.x ,fire__0.y, fire__0.width, fire__0.height);
+    drawFire(100, 20);
+    drawFire(300, 20);
 
 
     ctx.font = "30px Arial";
@@ -95,9 +110,9 @@ animate();
 
 
 //function draw image for all character
-function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH){
-    ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH);
-}
+// function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH){
+//     ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH);
+// }
 
 //Score
 let count = 0;
