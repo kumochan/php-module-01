@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>Đây là tiêu đề của websites</title>
+
+		<style type="text/css">
+			select {
+				padding: 8px;
+			}
+
+			button {
+				background-color: green;
+				color: #fff;
+				padding: 8px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<label>Choose Gender</label>
+		<!-- <select id="age">
+			<option value="">--- Mời bạn chọn tuổi ---</option>
+			<option value=18>Tuổi thành niên</option>
+			<option value=25>Tuổi lao động</option>
+		</select> <br /> -->
+
+		<input type="number" value="" id="age" />
+		<input type="text" value="" id="name" />
+
+		<button type="button" onclick="showInfo();">Submit</button>
+	<script type="text/javascript">
+		function showInfo(){
+
+			// result = (a + b < 4) ? 'Below' : 'Over';
+
+			// var tuoi = 18;
+			// if (tuoi > 16) {
+			// 	alert ('ban hon 16 tuoi');
+			// } else {
+			// 	alert ('ban nho hon 16 tuoi');
+			// }
+
+			// tuoi > 16 ? alert ('ban hon 16 tuoi') : alert ('ban nho hon 16 tuoi');
+
+			var age = document.getElementById('age').value;
+			console.log(typeof(age));
+			var int_age = parseInt(age);
+			var name = document.getElementById('name').value;
+
+			switch(int_age){
+				case 16:
+					alert("Ban 16 tuoi");
+					switch(name) {
+						case 'thao':
+							alert('Chao thao'); break;
+						case 'tuan':
+							alert('Chao tuan'); break;
+					}
+				case 17:
+				case 18:
+					alert('Ban 18 tuoi, van la do tuoi vi thanh nien. Can di hoc');
+					break;
+				case 20:
+				case 21:
+				case 25:
+					alert('Ban do tuoi lao dong, can di lam kiem tien du lich');
+					break;
+				default:
+					alert('Ban khong phai 18 hay 25 tuoi');
+					break;
+			}
+		}
+		
+	</script>
+	</body>
+</html>

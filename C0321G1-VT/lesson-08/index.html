@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>Đây là tiêu đề của websites</title>
+
+		<style type="text/css">
+			#interests_man {
+				display: none;
+			}
+
+			#interests_woman {
+				display: none;
+			}
+		</style>
+
+	</head>
+	<body>
+	<label>Choose Gender</label>
+	<select id="gender" onchange="displayName();">
+		<option value="Thành">-----</option>
+		<option value="Man">Man</option>
+		<option value="Woman">Woman</option>
+		<option value="BD">BD</option>
+	</select> <br />
+
+
+	<select id="interests_man">
+		<option value="">---Chọn sở thích---</option>
+		<option value="Football">Football</option>
+		<option value="Basketball">Basketball</option>
+	</select>
+
+	<select id="interests_woman">
+		<option value="Swim">Swim</option>
+		<option value="Makeup">Makeup</option>
+	</select>
+
+	<p id="hello"> Đây là nội dung sẽ thay đổi theo điều kiện của if-else</p>
+
+	<input type="number" id="age" value="" />
+	<br /> <button type="button" onclick="checkAge();">Submit</button>
+	<script type="text/javascript">
+
+		function checkAge() {
+			var age = document.getElementById('age').value;
+
+			console.log(typeof(age));
+			var int_age = parseInt(age);
+
+			if (int_age === 16) {
+				console.log('Bạn học lớp 9');
+			} else if (int_age === 18) {
+				console.log('Bạn học lớp 12');
+			} else {
+				console.log('Bạn chưa đi học');
+			}
+		}
+
+
+		function displayName(){
+			var gender = document.getElementById('gender').value;
+			console.log(gender);
+
+			if (gender === 'Man') {
+				document.getElementById('hello').innerText = "You are Men";
+
+				document.getElementById('interests_man').style.display = "block";
+				document.getElementById('interests_woman').style.display = 'none';
+			} else if (gender === 'Woman') {
+				document.getElementById('hello').innerText = "You are Women";
+
+				document.getElementById('interests_woman').style.display = 'block';
+				document.getElementById('interests_man').style.display = 'none';
+			} else if (gender === 'BD') {
+				document.getElementById('hello').innerText = "You are Tuấn";
+			} else {
+				document.getElementById('hello').innerText = "You are not choosen";
+				document.getElementById('interests_man').style.display = 'none';
+				document.getElementById('interests_woman').style.display = 'none';
+			}
+		}
+	</script>
+	</body>
+</html>

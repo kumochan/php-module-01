@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Đây là tiêu đề của websites</title>
+
+		<style type="text/css">
+			button {
+				background-color: green;
+				color: white;
+				padding: 8px;
+			}
+
+			input {
+				padding: 8px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<label>Choose Gender</label>
+		<select id="gender">
+			<option value="Thành">-----</option>
+			<option value="Man">Man</option>
+			<option value="Woman">Woman</option>
+			<option value="BD">BD</option>
+		</select> <br />
+
+	<label>Nhập tuổi:</label>
+	<input type="number" id="age" value="" />
+	<br />
+	<button type="button" onclick="showInfo();">Submit</button>
+	<script type="text/javascript">
+		function showInfo(){
+			// BTVN
+			// 1. Nếu chọn là Woman thì kiểm tra tuổi
+			//		- Nếu tuổi < 16 => console.log('Bạn còn đang học phổ thông')
+			//		- Nếu tuổi từ 17-25 => in ra Bạn đi học đại học
+			//		- Nếu tuổi từ 25 trở lên thì bạn phải đi làm kiếm cơm;
+			//
+			// 2. Nếu chọn ----- thì thông báo, bạn cần chọn giới tính
+			var gender = document.getElementById('gender').value;
+			var age = document.getElementById('age').value;
+			var int_age = parseInt(age);
+			if (gender === 'Man') {
+				if (int_age < 18) {
+					console.log('Ban van di hoc');
+				} else  if (int_age >=18 && int_age <=27) {
+					console.log('Ban phai di nghia vu QS');
+				} else {
+					console.log('Ban da het tuoi di nghia vu QS');
+				}
+			}
+
+		}
+		
+	</script>
+	</body>
+</html>
