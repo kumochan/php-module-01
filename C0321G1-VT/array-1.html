@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<style>
+		input, button {
+			padding: 8px;
+		}
+		</style>
+	</head>
+	<body>
+		<input type="text" value="" id="txtNumber" />
+		<br />
+		<button onclick="addNumber();" type="button">Add</button>
+		<button onclick="displayArray();" type="button">Display</button>
+		<p id="result"></p>
+		<script>
+			// B1: Tao giao dien OK
+			// B2: Nhan nut Add thi them phan tu vua nhap o o text vao mang (yeu cau)
+			//		- Khai bao 1 bien mang de luu gia tri
+			//		- Viet 1 ham de khi onclick vao nut Add se them phan tu vua nhap o o text vao mang
+			//			1 + Lay gia tri vua nhap o o text;
+			//			2 + Them phan tu vua lay duoc vao mang da khai bao o tren
+
+			let arrNumbers = [];
+			console.log('Mang ban dau: ' + arrNumbers);
+
+			function addNumber() {
+				//1
+				let number = document.getElementById('txtNumber').value;
+				//2
+				arrNumbers.push(number);
+
+				console.log('Mang sau khi them phan tu: ' + arrNumbers);
+			}
+
+			function displayArray(){
+				let data = "";
+				for (var i = 0; i < arrNumbers.length; i++) {
+					data += arrNumbers[i] + " - ";
+				}
+				document.getElementById('result').innerHTML = data;
+			}
+		</script>
+
+	</body>
+</html>
