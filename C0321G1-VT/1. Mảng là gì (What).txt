@@ -1,0 +1,46 @@
+1. Mảng là gì (What)
+	- Là 1 biến
+	- Lưu được nhiều phần tử (giá trị)
+		=> let arrayNumbers = [1, 2, 3, 100];
+		=> let arrayNames = ['Ninh', 'Cường', 'Tuấn', 'Kiên']
+		=> let students = [
+				{'name'=> 'Ninh', 'age' => 20},
+				{'name'=> 'Cường', 'age' => 21}
+			]
+
+2. Tại sao phải dùng mảng (Why)
+
+	- Ngắn gọn => 
+		Thay vì khai báo từng phần tử => Dùng mảng
+	- Dễ dàng lấy ra giá trị
+
+	2 góc độ: Máy tính, sử dụng
+	- Máy tính:
+		let arrayNumbers = [1, 2, 3, 100];
+	- Sử dụng
+
+
+3. Dùng như thế nào (How)
+	- Khai báo
+		1 + let arrayNumbers = [1, 2, 3, 100];
+		2 + let arraySkills = [];
+
+		3 + let arrayNames = new Array();
+		4 + let arrayFirstName = Array('Nguyễn', 'Ngô');
+	
+	- Tính chất
+		1. Độ dài:  
+			let arrayNumbers = [1, 2, 3, 100];
+			if (arrayNumbers.length == 4) console.log('demo');
+		2. Index (chỉ mục)
+			Chỉ mục bắt đầu từ 0;
+			Kết thúc ở length-1;
+
+	- Các hàm thao tác với mảng
+		x1. Thêm 1 phần tử vào cuối mảng
+		x2. Thêm 1 phần tử vào đầu mảng
+		3. Thêm 1 phần tử vào 1 vị trí bất kỳ trong mảng
+		4. Gỡ (bỏ): cuối, đầu, bất kỳ
+		x5. Tìm kiếm xem mảng có chứa phần tử có giá trị là xyz hay không?
+		...
+

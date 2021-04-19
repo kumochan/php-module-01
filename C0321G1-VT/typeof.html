@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style type="text/css">
+      button {
+        padding: 8px;
+        color: #fff;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <p> demo let var</p>
+    <input type="text" id="txtName" />
+    <button onclick="showInfo();">Show Information</button>
+    <script type="text/javascript">
+      // Lay du lieu tu the input
+      function showInfo() {
+        var name = document.getElementById('txtName').value;
+        alert(name);
+      }
+
+      var age = 35;
+      var tuoi = '35';
+      var tuoi_2 = 35.8;
+
+      var arr = [1, 3, 4];
+
+      console.log(typeof(age));
+      console.log(typeof(tuoi));
+      console.log(typeof(arr));
+      console.log(typeof(tuoi_2));
+
+      //== va ===
+
+      if (age === tuoi) {
+        alert('1. age == tuoi');
+      } else {
+        alert('2. age != tuoi');
+      }
+
+    </script>
+  </body>
+</html>

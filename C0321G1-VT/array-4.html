@@ -1,0 +1,59 @@
+<html>
+<head>
+</head>
+<body>
+    <h3>Caro Game Simple</h3>
+    <p id="carogame" />
+    <input type="button" value="Người chơi 1 - Nhập X" onclick="changeValue(x)" />
+    <input type="button" value="Người chơi 2 - Nhập O" onclick="changeValue(o)" />
+    <script>
+        //Xây dựng game caro đơn giản sử dụng phần thực hành về tạo bàn cờ caro.
+        //  Bàn cờ thay vì số 0 hiển thị mặc định bằng dấu (.). 
+        //Có 2 người chơi lần lượt nhập vào là X và O.
+        //  Mỗi lần giá trị được nhập vào thì bàn cờ thay đổi giá trị theo người chơi. 
+        //Xác định người chiến thằng nhập giá trị có 3 ô liên tiếp giống nhau.
+
+
+        let b = document.getElementById("carogame");
+
+        let board = [];
+        let data = "";
+        for (let i = 0; i < 3; i++) {
+            board[i] = new Array('.', '.', '.');
+        }
+
+        for (let i = 0; i < 3; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 3; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+
+        data += "<br/><br/><button type='button' value='X' onclick='changeValue(this.value)'>Người chơi 1 - X</button>"
+        b.innerHTML = data;
+
+        function changeValue(value) {
+            let positionX = +prompt("Hàng: ") - 1;
+            let positionY = +prompt("Cột: ") - 1;
+            //let positionX = prompt("X: ");
+            //let positionY = prompt("Y: ");
+            data = "";
+            if (value === 'X') {
+                board[positionX][positionY] = "x";
+            } else {
+                board[positionX][positionY] = "o";
+            }
+            for (let i = 0; i < 3; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 3; j++) {
+                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                }
+            }
+            data += "<br/><br/><button type='button' value='X' onclick='changeValue(this.value)'>Người chơi 1 - X</button><button type='button' value='O' onclick='changeValue(this.value)'>Người chơi 2 - O</button>"
+            b.innerHTML = "<hr/>" + data;
+        };
+    </script>
+
+</body>
+
+</html>

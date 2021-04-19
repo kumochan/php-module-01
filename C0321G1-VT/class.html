@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style type="text/css">
+      .green {
+        color: green;
+      }
+
+      .red {
+        color: red;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="green"> demo GREEN</p>
+    <p class="red"> demo GREEN</p>
+    <p class="green"> demo GREEN</p>
+
+    <p class="red"> demo RED</p>
+    <p class="red"> demo RED</p>
+    <input type="text" id="txtName" />
+    <button onclick="showInfo();">Show Information</button>
+    <script type="text/javascript">
+       var green_class = document.getElementsByClassName('green');
+       console.log(green_class);
+
+       var red_class = document.getElementsByClassName('red');
+       console.log(red_class);
+
+    </script>
+  </body>
+</html>

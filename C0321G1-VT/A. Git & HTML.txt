@@ -1,0 +1,24 @@
+A. Git & HTML
+
+1. GIT
+	VCS Version Control Source
+
+	GIT là 1 hệ thống quản lý mã nguồn ~ VCS
+
+	Trang web github.com
+	Mọi người cần cài phần mềm git https://git-scm.com/download/win
+
+2. HTML
+	html hypertext markup language
+
+	Đường dẫn tương đối
+		- vị trí tương đối của các file trong dự án
+		<image src="images/cat2.jpeg" />
+		demo
+			| - index.html
+			| - images
+			|	| - cat2.jpeg
+
+	Đường dẫn tuyệt đối
+		- vị trí lưu trữ file trên máy tính
+		<image src="/Users/thao/DATA/images/cat2.jpeg" />

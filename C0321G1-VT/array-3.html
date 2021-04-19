@@ -1,0 +1,37 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        let arrayNumber = [9, 16, 25];
+
+        arrayNumber.map(Math.sqrt); // [3, 4, 5]
+        arrayNumber.map(function(){
+            //code tinh can 2
+            for(var i = 0; i< arrayNumber.length; i++){
+                let value = arrayNumber[i].sqrt();
+            }
+        });
+        arrayNumber.map(x=>x*2);
+
+        let arrayNumberFloat = [1.5, 4.5, 6.5, 12.4];
+        let array = [arrayNumber, arrayNumberFloat];
+
+        let multilevel = new Array(); // an array of "whatever"
+        multilevel[0] = new Array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j");
+        multilevel[1] = new Array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J");
+        multilevel[2] = new Array("!", "@", "#", "$", "%", "^", "&", "*", "(", ")");
+
+        for (var i = 0; i < multilevel.length; i++) {
+            console.log(multilevel[i]);
+            for (var j = 0; j < multilevel[i].length; j++) {
+                console.log(multilevel[i][j]);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

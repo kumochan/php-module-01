@@ -1,0 +1,31 @@
+<html>
+  <head></head>
+  <body>
+    <p> demo let var</p>
+
+    <script type="text/javascript">
+      function demo(){
+        console.log(classname);
+
+        var classname = 'c03VT';
+        console.log('xin chào: ' + classname);
+      }
+      demo();
+
+      function checkName() {
+        console.log(showInfo);
+
+        let showInfo = "Trinh Minh Thao - 35 tuoi";
+        console.log(showInfo);
+      }
+
+      checkName();
+
+      var foo = "Foo";  // globally scoped
+      let bar = "Bar"; // globally scoped
+
+      console.log(window.foo); // Foo
+      console.log(window.bar); // undefined
+    </script>
+  </body>
+</html>
