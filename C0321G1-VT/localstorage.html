@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SO NGHYEN TO</title>
+</head>
+
+<body>
+    <input type="text" value="" id="product_name" /> <br />
+    <button type="button" onclick="submit();">Submit</button>
+    <div id="result"></div>
+    <script>
+        let key = 0;
+        function submit() {
+            // b1. Luu du lieu vao localStorage
+            let product_name = document.getElementById('product_name').value;
+            key = Math.floor(Math.random() * 10000000);
+            localStorage.setItem(key, product_name);
+
+            //b2. Hien thi du lieu
+            displayData();
+        }
+
+        window.onload = function () {
+            displayData();
+        }
+
+        function displayData() {
+            let data = '';
+            Object.keys(localStorage).forEach(function (key) {
+                console.log(localStorage.getItem(key));
+                data += localStorage.getItem(key) + " <button type='button' value='" + key + "' onclick='edit(this);'>Edit</button> <br /> ";
+            });
+            document.getElementById("result").innerHTML = data;
+        }
+
+        function edit(object) {
+            for (x in localStorage) {
+                if (object.value == x) {
+                    document.getElementById('product_name').value = localStorage.getItem(x);
+                }
+            }
+        }
+
+        // if (typeof (Storage) !== "undefined") {
+        //     // Store: sẽ lưu trữ dữ liệu dưới dạng key-value
+        //     // key = lastname
+        //     // value = Smith
+        //     // setItem sẽ dùng để tạo ra 1 giá trị mới (đối tượng mới)
+        //     // getItem sẽ dùng để lấy ra giá trị theo key
+        //     localStorage.setItem("lastname", "Smith");
+        //     localStorage.setItem('c0321g1', '6 members');
+
+        //     // Retrieve
+        //     document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+        //     console.log(localStorage.getItem('c0321g1'));
+        // } else {
+        //     document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+        // }
+    </script>
+
+</body>
+
+</html>
