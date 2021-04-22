@@ -1,0 +1,97 @@
+<!-- class Animal {
+    leg;
+    hairColor;
+    makeSound();
+    run();
+}
+
+let dog = new Animal();
+dog.leg = 4;
+dog.hairColor = 'white';
+dog.makeSound('go go');
+dog.run('200km/h'); -->
+
+<canvas id="myCanvas" width="400" height="400"></canvas>
+
+<script>
+    /* Cach 1
+    let apple = function () {
+
+        this.type = "macintosh";
+        this.color = "red";
+        this.getInfo = function () {
+            return this.color + ' ' + this.type + ' apple';
+        };
+    }
+
+    let computer = new apple();
+    computer.color = 'green';
+    console.log(computer);
+    */
+
+    class Computer {
+
+        changeColor(newColor) {
+            this.color = newColor;
+        }
+
+        constructor(color, weight, branch) {
+            this.color = color;
+            this.weight = weight;
+            this.branch = branch;
+
+            this.display();
+        }
+
+        display() {
+            console.log('Color: ' + this.color + " - Weight: " + this.weight + " - branch: " + this.branch);
+        }
+    }
+
+    let macbook = new Computer('white', 1.3, 'Apple');
+    //macbook.display();
+
+    let thinkpad = new Computer('black', 1.1, 'Lenovo');
+    thinkpad.display();
+
+    thinkpad.color = 'red';
+    thinkpad.display();
+
+    thinkpad.changeColor('blue');
+    thinkpad.display();
+
+    class Player {
+        constructor(speed, image, x, y){
+            this.speed = speed;
+            this.image = image;
+            this.x = x;
+            this.y = y;
+        }
+
+        drawPlayer(){
+            // su dung canvas de ve anh
+        }
+
+        moveX(x){
+            this.x = x;
+        }
+
+        moveY(y){
+            this.y = y;
+        }
+    }
+
+    let heroImg = new Image();
+    heroImg.src = 'hero.png';
+    let hero = new Player(10, heroImg, 0, 0);
+    hero.drawPlayer();
+    hero.moveX(50);
+   
+    // canvas
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(200, 200, 140, 0, 2 * Math.PI);
+    ctx.stroke();
+
+</script>
