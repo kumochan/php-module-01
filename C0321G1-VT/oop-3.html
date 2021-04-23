@@ -1,0 +1,107 @@
+<script>
+    // b1. tạo class mobile
+    // b2. tạo đối tượng phone_1
+    // b3. tạo đối tượng phone_2
+    // b4. phone_1 gửi tin nhắn cho phone_2
+
+    /*
+    // cách 1
+    // b1. tạo class mobile
+    function mobile() {
+        this.name = '';
+        this.message = '';
+
+        this.sendMessage = function(sendMessage, mobileObject) {
+            mobileObject.message = sendMessage;
+        }
+
+        this.displayMessage = function(){
+            console.log(this.message);
+        }
+    }
+
+    let iphone12ProMax = new mobile();
+    iphone12ProMax.name = 'iPhone 12 ProMax';
+    iphone12ProMax.message = 'Tin nhan luu tru cua iphone12ProMax';
+
+    iphone12ProMax.displayMessage();
+
+    //console.log('Ten dien thoai cua ban la: ' + iphone12ProMax.name);
+    //console.log('Tin nhan trong may cua ban la: ' + iphone12ProMax.message);
+
+    let samsungS21 = new mobile();
+    samsungS21.name = 'SamSung S21';
+
+    let samsungS21Utral = new mobile();
+    samsungS21Utral.name = 'SamSung S21 Utral';
+
+    let xiaoMiMix = new mobile();
+    xiaoMiMix.name = 'MiMix 3';
+
+    iphone12ProMax.sendMessage('iphone gui tin nhan cho android', samsungS21);
+    //samsungS21.displayMessage();
+
+    iphone12ProMax.sendMessage('iphone Gui Tin Nhan cho samsungS21Utral', samsungS21Utral);
+    //samsungS21Utral.displayMessage();
+
+    samsungS21Utral.sendMessage('Utral gui tin nhan cho XiaoMi', xiaoMiMix);
+    //xiaoMiMix.displayMessage();
+    */
+
+    // cach 2
+    class Mobile {
+        constructor(name) {
+            this.name = name;
+            this.message = '';
+            this.battery = 100;
+            this.arrMessage = [];
+            this.objectSOS = null;
+        }
+
+        setSOS(objectSOS) {
+            this.objectSOS = objectSOS;
+        }
+
+        turnOff(){
+            this.sendMessage('Toi tat may day', this.objectSOS);
+            this.battery -= 1;
+        }
+
+        sendMessage(sendMessage, ObjectReceived){
+            ObjectReceived.message = sendMessage;
+            this.battery -= 1;
+        }
+
+        saveMessage(){
+            this.arrMessage.push(this.message);
+            this.battery -= 1;
+        }
+
+        displayMessage(){
+            console.log(this.message);
+        }
+    }
+
+    let nokia_7610 = new Mobile('Nokia 7610');
+    let blackBerry_7290 = new Mobile('BlackBerry 7290');
+    let lumina_250 = new Mobile('Lumina 250');
+    nokia_7610.setSOS(blackBerry_7290);
+    nokia_7610.turnOff();
+
+    blackBerry_7290.displayMessage();
+
+    nokia_7610.sendMessage('Gui cho lumina_250', lumina_250);
+    lumina_250.saveMessage();
+
+    nokia_7610.sendMessage('Gui cho blackberry 7290', blackBerry_7290);
+    console.log('nokia_7610 PIN sau khi gui tin nhan: ' + nokia_7610.battery);
+
+
+    blackBerry_7290.sendMessage('blackberry send to lumina', lumina_250);
+    lumina_250.saveMessage();
+    console.log("Lumina 250 PIN: " + lumina_250.battery);
+    console.log(lumina_250.arrMessage);
+    
+    lumina_250.displayMessage();
+
+</script>

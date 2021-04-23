@@ -1,0 +1,56 @@
+<canvas id="myCanvas" width="800" height="400"></canvas>
+
+<script>
+    class Player {
+        constructor(speed, image, x, y) {
+            this.speed = speed;
+            this.image = image;
+            this.x = x;
+            this.y = y;
+        }
+
+        drawPlayer() {
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(this.image, this.x, this.y, 10, 20);
+        }
+
+        moveX(x) {
+            console.log(this.x);
+            this.x += x;
+        }
+
+        moveY(y) {
+            console.log(this.y);
+            this.y += y;
+        }
+    }
+
+    function GamePlay(timestamp) {
+        hero.moveX(20);
+        hero.drawPlayer();
+        //requestAnimationFrame(GamePlay);
+        if (start === undefined)
+            start = timestamp;
+        const elapsed = timestamp - start;
+
+        // `Math.min()` is used here to make sure that the element stops at exactly 200px.
+        //element.style.transform = 'translateX(' + Math.min(0.1 * elapsed, 200) + 'px)';
+
+        // if (elapsed < 100000) { // Stop the animation after 2 seconds
+            
+        // }
+
+        setInterval(function(){ window.requestAnimationFrame(GamePlay); }, 3000);
+    }
+
+    let start;
+    let heroImg = new Image();
+    heroImg.src = 'abc.png';
+    let hero = new Player(10, heroImg, 0, 0);
+    //GamePlay();
+    window.requestAnimationFrame(GamePlay);
+
+
+
+</script>
