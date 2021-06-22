@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+	#fname {
+		color:red;
+	}
+
+	.text-right{
+		  text-align: right;
+	}
+</style>
+
+<form action="" method='POST'>
+  <label id="fname" for="fname">First name:</label><br>
+  <input class="text-right" type="text" id="fname" name="name" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input class="text-right" type="text" id="lname" name="age" value="10"><br><br>
+
+  <select name='city'>
+	<option value='city-1'>HCM</option>
+  	<option value='city-2'>Ha noi</option>
+  	<option value='DN'>DN</option>
+  </select>
+
+  <input type='radio' name='gender'>Male
+  <input type='radio' name='gender'>Female
+  <br />
+
+  <input type='checkbox' name='product' />Product 1
+  <input type='checkbox' name='product' />Product 2
+  <input type='checkbox' name='product' />Product 3
+  <br />
+
+  <input type="number" min="0" step="3" name="dollar"/>
+  <input type='money' name="cent"/>
+  <textarea cols='10' rows='5'>
+  	noi dung
+  </textarea>
+  <input type="submit" value="Submit">
+</form> 
+
+
+
+</body>
+</html>

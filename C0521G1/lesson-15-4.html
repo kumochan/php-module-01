@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script>
+	// Thuật toán kiểm tra đối xứng
+	// (1) Kiểm tra xem ký tự đầu tiên và ký tự cuối cùng của chuỗi có bằng nhau.
+	// (2) Bỏ qua hai ký tự đầu và cuối, kiểm tra xem phần còn lại của chuỗi con là một palindrome.
+	let palindrome = "zrotorz"; //6
+	let arr_palindrome = palindrome.split("");
+	start = 0;
+	end = arr_palindrome.length - 1;
+	function isPalindrome(palindrome, start , end) {
+		if (end <= start) return 'la chuoi palindrome';
+
+		if (arr_palindrome[start] == arr_palindrome[end]) {
+				start++;
+				end--;
+				isPalindrome(palindrome, start, end);
+		} else {
+			return 'ko phai chuoi doi xung';
+		}
+	}
+
+	console.log(isPalindrome(arr_palindrome));
+
+	
+</script>
+
+</head>
+<body>
+	<input type="text" name="" id="txtNumber" />
+	<button onclick="addNumber();" type="button">Add</button>
+	<button onclick="displayNumbers();" type="button">Display</button>
+	<p id="display"></p>
+</body>
+</html>

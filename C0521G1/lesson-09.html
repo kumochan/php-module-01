@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script>
+
+	// 3 canh tam giac
+	// let a = +prompt('input a: ');
+	// let b = +prompt('input b: ');
+	// let c = +prompt('input c: ');
+
+	// if (a > 0 && b > 0 && c > 0) {
+	// 	if (a + b > c && a + c > b && b + c > a) {
+	// 		alert('la 3 canh tam giac');
+	// 	} else {
+	// 		alert('khong phai la 3 canh tam giac');
+	// 	}
+	// } else {
+	// 	alert('khong phai la 3 canh cua tam giac');
+	// }
+
+	// Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+
+	// money = 100.000.000;
+	// rate/month = 0.5%;
+	// month = 6;
+
+//Bai1
+	// let width = +prompt('input w: ');
+	// let height = +prompt('input h: ');
+	// let bmi = weight / ( height * height );
+
+	// if (bmi < 18)
+ //    	document.write("Underweight");
+	// else if (bmi < 25.0)
+	//     document.write("Normal");
+	// else if (bmi < 30.0)
+	//     document.write("Overweight");
+	// else
+	//     document.write("Obese");
+
+
+//Bai hien thi so ngay trong thang nhap vao tu o input
+// b1. co 1 o input
+// b2. kiem tra xem thang day co bao nhieu ngay (switch)
+// b3. thi hien thi ra
+
+// function showResult(){
+// 	let month = parseInt(document.getElementById('txtMonth').value);
+// 	switch(month){
+// 		//31
+// 		case 1:
+// 		case 3:
+// 		case 5:
+// 		case 7:
+// 		case 8:
+// 		case 10:
+// 		case 12:
+// 			document.getElementById('result').innerText = '31 ngay';
+// 			break;
+// 		case 4:
+// 		case 6:
+// 		case 11:
+// 			document.getElementById('result').innerText = '30 ngay';
+// 			break;
+		
+// 		case 2:
+// 			document.getElementById('result').innerText = '28 hoac 29 ngay';
+// 			break;
+
+// 		default:
+// 			document.getElementById('result').innerText = "(_''_)";
+// 			break;
+// 	}
+// }
+
+let n = +prompt('input n: ');
+if (n === 0) {
+	alert('=0');
+} else if (n > 0) {
+	alert('n>0');
+} else {
+	alert('n<0');
+}
+
+</script>
+
+</head>
+<body>
+	<input id="txtMonth" type="text" value="" /> <button onclick="showResult();" type="button">Hien thi</button>
+	<p id="result"></p>
+
+</body>
+</html>

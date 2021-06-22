@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Page Title</title>
+	<script>
+
+		// Cach 1:
+		// function Apple(type) {
+		// 	this.type = type;
+		// 	this.color = "red";
+		// 	//this.getInfo = getAppleInfo;
+		// }
+
+		// let iPhone12ProMax = new Apple('brandnew');
+
+		// // cach 2
+		// let o = new Object();
+		// o.name = 'thao';
+		// o.age = 18;
+
+		// // cach 3
+		// let apple = new function () {
+		// 	this.type = "macintosh";
+		// 	this.color = "red";
+		// 	this.getInfo = function () {
+		// 		return this.color + ' ' + this.type + ' apple';
+		// 	};
+		// }
+
+		// cach 1
+		function Cat() {
+			this.leg = 4;
+			this.hair = 'white';
+
+			this.nhuomlong = function (hair) {
+				this.hair = hair;
+			}
+
+			this.makeSound = function (type) {
+				console.log(type + ': mewwwww');
+			}
+
+			this.run = function () {
+				console.log('cat runnnnnn');
+			}
+		}
+
+		let tamthe = new Cat();
+		// tamthe.makeSound('tam the');
+		// tamthe.nhuomlong('red');
+		// console.log(tamthe.hair);
+
+		let batu = new Cat();
+		console.log(batu.hair);
+		batu.nhuomlong('orange');
+		console.log(batu.hair);
+		batu.makeSound('ba tu')
+
+		function Tiger(hair, tail, eyes) {
+			this.hair = hair;
+			this.tail = tail;
+			this.eyes = eyes;
+
+			this.run = function () {
+				console.log('run 80km/h');
+			}
+
+			this.eat = function () {
+				console.log('thit thit');
+			}
+
+			this.showInfo = function () {
+				console.log(this.hair);
+				console.log(this.tail);
+				console.log(this.eyes);
+
+				this.run();
+				this.eat();
+			}
+
+		}
+
+		let whiteTiger = new Tiger('white', '2m', 'brown');
+		whiteTiger.showInfo();
+
+
+		function cho(chan, tai, duoi) {
+			this.chan = chan;
+			this.tai = tai;
+			this.duoi = duoi;
+			this.getInfor = function (){
+				console.log('Chan: ' + this.chan + 'tai' + this.tai + 'duoi' + this.duoi);
+			}
+		}
+		let pitbull = new cho(4, 'to', 'duoi thut');
+		pitbull.getInfor();
+
+	</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

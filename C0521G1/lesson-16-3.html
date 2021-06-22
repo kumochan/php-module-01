@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <script>
+        var canvas = document.getElementById('vlieu');
+        console.log(canvas);
+        var ctx = canvas.getContext("2d");
+        var x = 0;
+        var y = 0;
+
+        var imgTag = new Image();
+        imgTag.onload = animate;
+        imgTag.src = "http://i.stack.imgur.com/Rk0DW.png";   // load image
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);  // clear canvas
+            ctx.drawImage(imgTag, x, y);                       // draw image at current position
+            x += 4;
+            if (x > 250) requestAnimationFrame(animate)        // loop
+        }
+        
+    </script>
+</head>
+
+<body>
+    <canvas id="vlieu" width=640 height=180></canvas>
+
+</body>
+
+</html>

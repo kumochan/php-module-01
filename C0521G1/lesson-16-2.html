@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <script>
+        function Mobile(name, brand, display, price) {
+            this.name = name;
+            this.brand = brand;
+            this.display = display;
+            this.price = price;
+            this.storeMessage = [];
+            this.battery = 50;
+
+            this.charge = function(type) {
+                if (type == 'fast') this.battery += 2;
+                else this.battery += 1;
+            }
+
+            this.sendMessage = function (message, receive) {
+                receive.storeMessage.push(message);
+            }
+
+            this.display = function () {
+                console.log(this.storeMessage);
+            }
+
+        }
+
+        let iPhone12 = new Mobile('ProMax', 'Apple', '6.1', 30000000);
+        let samsungGalaxy = new Mobile('S21', "SamSung", '6.2', 23000000);
+
+        iPhone12.sendMessage('Khoe khong?', samsungGalaxy);
+        samsungGalaxy.display();
+        samsungGalaxy.sendMessage('tao khoe, thit cho khong?', iPhone12);
+        iPhone12.display();
+
+        console.log('pin luc dau: ' + iPhone12.battery);
+        iPhone12.charge('fast');
+        console.log('pin luc sau: ' + iPhone12.battery);
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

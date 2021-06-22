@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script>
+	// 1. Tạo giao diện
+	// 	- thẻ input
+	// 	- nút add: thêm phẩn tử vừa nhập vào mảng
+	// 	- nút display: hiển thị dữ liệu cho người dùng;
+	// 2. Khai báo mảng
+	// 	- let numbers = new array();
+	// 	- let numbers = [];
+	// 3. Nhập dữ liệu
+	// 	- numbers[0] = input
+	// 4. Hiển thị
+	// 	- loop cac phan tu cua mang sau do hien thi tung phan tu
+
+	let numbers = [1, 4, 18];
+	let index = 3;
+
+	function addNumber(){
+		let index = numbers.length;// = 3;
+		let number = parseInt(document.getElementById('txtNumber').value);
+		numbers[index] = number;
+
+		// xoa du lieu o input
+		document.getElementById('txtNumber').value = '';
+	}
+
+	function addNumber_2() {
+		let number = parseInt(document.getElementById('txtNumber').value);
+		index++;
+		numbers[index] = number;
+
+		// xoa du lieu o input
+		document.getElementById('txtNumber').value = '';
+
+	}
+
+	function displayNumbers() {
+		let display = '';
+		// document.getElementById('display').innerHTML = display;
+		for (let i = 0; i < numbers.length; i++) {
+			display += '<p> Element ' + i + " = " + numbers[i] + "</p>";
+		}
+
+		document.getElementById('display').innerHTML = display;
+	}
+
+
+</script>
+
+</head>
+<body>
+	<input type="text" name="" id="txtNumber" />
+	<button onclick="addNumber();" type="button">Add</button>
+	<button onclick="displayNumbers();" type="button">Display</button>
+	<p id="display"></p>
+</body>
+</html>

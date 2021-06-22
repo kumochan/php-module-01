@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script>
+	// Thế nào là số nguyên tố
+
+	// - Chia hết cho 1 và chính nó.
+
+	// B1. Viết hàm kiểm tra 1 số là n.tố
+	// 	Chia hết cho 1 và chính nó
+	// 		-) Vòng lặp kiểm tra từ i=> 2 => n/2, nếu n/i == 0 => K phải ngto
+	// 		-) nguoc lai la so nguyen to
+
+	// 		-) i++
+
+	// B2. Sử dụng vòng lặp gọi hàm. Kiểm tra nếu đủ 10000 số thì dừng.
+
+
+	function isPrime(number) {
+		for (var i = 2; i < number/2; i++) {
+			if (number % i == 0) return false;
+		}
+		return true;
+	}
+
+	number = 2;
+	while(number < 100) {
+		if(isPrime(number)) {
+			console.log(number);
+		}
+		number++;
+	}
+
+</script>
+
+</head>
+<body>
+	<input type="text" name="" id="txtNumber" />
+	<button onclick="addNumber();" type="button">Add</button>
+	<button onclick="displayNumbers();" type="button">Display</button>
+	<p id="display"></p>
+</body>
+</html>

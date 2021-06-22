@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script>
+	// B1. Tao 2 mang
+	// - mang 1 chua ten ngoi sao
+	// - mang 2 chua ten chom sao
+	// B2. Tao 1 ham, tham so la 1 chuoi
+	// B3.
+	// 	- Nhap 1 chuoi tu prompt
+	// 	- Duyet qua mang thu nhat = cach goi ham buoc 2
+	// 	- Neu tim thay thi dua ra ten chom sao - o mang 2
+	// 	- khong tim thay thi bao ko co
+
+	let stars = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+	let stars_group = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+	function display(star) {
+
+		for (var i = 0; i < stars.length; i++) {
+			if (stars[i] === star) {
+				console.log(stars_group[i]);
+				break;
+			} 
+		}
+		console.log('not found');
+	}
+
+	let star = prompt('input star: ').trim();
+	display(star);
+
+	/* cach 1
+	function display(star) {
+		let star = prompt('input star: ').trim();
+		if (stars.indexOf(star) > -1) {
+			console.log(stars_group[stars.indexOf(star)]);
+		} else {
+			console.log('not found');
+		}
+	}
+
+	display();
+	*/
+
+
+
+
+</script>
+
+</head>
+<body>
+	<input type="text" name="" id="txtNumber" />
+	<button onclick="addNumber();" type="button">Add</button>
+	<button onclick="displayNumbers();" type="button">Display</button>
+	<p id="display"></p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script>
+	function hideImage() {
+		var image = document.getElementById('google_img');
+		image.style.display = 'none';
+	}
+
+	function displayImage() {
+		var image = document.getElementById('google_img');
+		image.style.display = 'block';
+	}
+
+	let class_name = null;
+	let name = 'null';
+	let number = null;
+	console.log(number);
+
+</script>
+
+</head>
+<body>
+	<p id="test" onmouseout="displayImage();" onmouseover="hideImage();">Hidden Image</p>
+	<img id="google_img" src="google.jpg" alt="" />
+</body>
+</html>
