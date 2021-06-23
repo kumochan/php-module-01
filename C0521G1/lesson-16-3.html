@@ -3,30 +3,90 @@
 
 <head>
     <title>Page Title</title>
-    <script>
-        var canvas = document.getElementById('vlieu');
-        console.log(canvas);
-        var ctx = canvas.getContext("2d");
-        var x = 0;
-        var y = 0;
-
-        var imgTag = new Image();
-        imgTag.onload = animate;
-        imgTag.src = "http://i.stack.imgur.com/Rk0DW.png";   // load image
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);  // clear canvas
-            ctx.drawImage(imgTag, x, y);                       // draw image at current position
-            x += 4;
-            if (x > 250) requestAnimationFrame(animate)        // loop
-        }
-        
-    </script>
 </head>
 
 <body>
-    <canvas id="vlieu" width=640 height=180></canvas>
+    <canvas id="canvas" width=800 height=388 style="border: 1px solid red;"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        console.log(canvas);
+        var ctx = canvas.getContext("2d");
 
+
+        var imgTag = new Image();
+        imgTag.onload = animate;
+        imgTag.src = "ball.png";   // load image
+        imgTag.height = 100;
+        imgTag.width = 100;
+
+
+        var x = canvas.width / 2 - imgTag.width / 2;
+        var y = canvas.height / 2 - imgTag.height / 2;
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);  // clear canvas
+            ctx.drawImage(imgTag, x, y);                   // draw image at current position
+            //x += 4;
+            //if (x < 640) requestAnimationFrame(animate)        // loop
+            // requestAnimationFrame(animate)
+        }
+
+        // 1. ve canvas
+        //  - co roi
+        // 2. ve qua bong o giua
+        // x,y = canvas.width/2, canvas.height/2
+        // 3. nhan nut len thi bong di len 5px
+        // bat su kien phim nhan nut. kiem tra xem co phai la nut len khong x
+        // neu dung nut len thi giam y -5 x
+        // neu toa do qua bong (y == 0) dung x
+        // 4. nhan them ctrl + len tang toc x2
+        // => Bai ve nha
+        // var e = e || event;
+        // var isAdmin = true || fasle;
+
+
+
+        document.onkeydown = checkKey;
+
+        function checkKey(e) {
+
+            e = e || window.event;
+
+            if (e.keyCode == '38' && e.keyCode == '90') {
+                console.log('len');
+                y *= 5;
+                if (y > 0) {
+                    console.log(y);
+                    imgTag.onload = animate();
+                } else {
+                    y += 5;
+                    console.log(y);
+                }
+
+                // up arrow
+            }
+            else if (e.keyCode == '40') {
+                // down arrow
+                console.log('xuong');
+                y += 5;
+                if (y > 0) {
+                    console.log(y);
+                    imgTag.onload = animate();
+                } else {
+                    y -= 5;
+                    console.log(y);
+                }
+            }
+            else if (e.keyCode == '37') {
+                // left arrow
+            }
+            else if (e.keyCode == '39') {
+                // right arrow
+            }
+
+        }
+
+
+    </script>
 </body>
 
 </html>
